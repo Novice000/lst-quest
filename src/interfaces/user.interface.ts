@@ -6,7 +6,7 @@ export interface IUser {
     email: string,
     phoneNumber: string,
     dateOfBirth: Date,
-    accountDetails: IAccount
+    // accountDetails: IAccount
 }
 
 export interface IUserInput {

@@ -23,10 +23,10 @@ const userSchema = new Schema<IUser>({
         type: Date,
         required: true
     },
-    accountDetails: {
-        type: Schema.Types.ObjectId,
-        ref: "Account",
-    }
+    // accountDetails: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: "Account",
+    // }
 })
 
 
