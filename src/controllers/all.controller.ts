@@ -60,12 +60,10 @@ class AllController {
 	}
 
 	static async decryptCardDetails(req: Request, res: Response) {
-		const { encryptedCardDetails } = req.body;
-		const decryptedCardDetails = {
-			number: decrypt(encryptedCardDetails.numberCrypto),
-			cvv: decrypt(encryptedCardDetails.cvvCrypto),
-			expiryDate: decrypt(encryptedCardDetails.expiryDateCrypto),
-		};
+        const decryptedCardDetails = Object.assign({}, req.body);
+		Object.keys(decryptedCardDetails).forEach((key) => {
+			decryptedCardDetails[key] = decrypt(req.body[key]);
+		});
 		res.status(200).json({
 			message: "Card details decrypted successfully",
 			data: decryptedCardDetails,

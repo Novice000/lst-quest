@@ -2,9 +2,9 @@ import Joi from "joi";
 import { Request, Response, NextFunction } from "express";
 
 const schema = Joi.object({
-	numberCrypto: Joi.string().required(),
-	cvvCrypto: Joi.string().required(),
-	expiryDateCrypto: Joi.string().required(),
+	numberCrypto: Joi.string().optional(),
+	cvvCrypto: Joi.string().optional(),
+	expiryDateCrypto: Joi.string().optional(),
 });
 
 export function validateCard(req: Request, res: Response, next: NextFunction) {

@@ -11,11 +11,11 @@ const account = new Schema<IAccount>({
         type: String,
         required: true
     },
-    cardDetails: [{
+    cardDetails: {
         type: Schema.Types.ObjectId,
         ref: "Card",
         required: true
-    }]
+    }
 })
 
 

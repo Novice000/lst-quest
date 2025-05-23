@@ -20,9 +20,9 @@ app.get("/", (req, res) => {
 	});
 });
 
-app.post("/api/create-account", validateUserBody, AllController.CreateUserAndAccount);
-app.get("/api/get-all-accounts", AllController.getAllAccounts);
-app.post("/api/decrypt-card-details", validateCard, AllController.decryptCardDetails);
+app.post("/api/accounts/create", validateUserBody, AllController.CreateUserAndAccount);
+app.get("/api/accounts", AllController.getAllAccounts);
+app.post("/api/cards/decrypt", validateCard, AllController.decryptCardDetails);
 
 
 app.use(errorHandler);
